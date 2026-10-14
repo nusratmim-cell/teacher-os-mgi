@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Teacher OS Must-Have</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700;800&family=Hind+Siliguri:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+:root{
+  color-scheme: light;
+  --ground:#F9F8F5; --paper:#FFFFFF; --sunken:#F1EFEA;
+  --ink:#1A1D26; --ink-2:#4B5060; --ink-3:#7C8090;
+  --line:#E3E0D8; --line-2:#EEECE6;
+  --navy:#354894;
+  --ok:#2C7A4B; --ok-soft:#E3F1E8;
+  --warn:#9A6A06; --warn-soft:#FAEFD3;
+  --red:#D61F3A; --red-soft:#FCE4E8;
+  --sans:"Figtree","Hind Siliguri",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:"JetBrains Mono",ui-monospace,"SFMono-Regular",Menlo,Consolas,monospace;
+}
+*{box-sizing:border-box}
+body{background:var(--ground);color:var(--ink);font-family:var(--sans);font-size:19px;line-height:1.55;margin:0;padding:32px 20px 90px}
+.wrap{max-width:1400px;margin:0 auto;display:flex;flex-direction:column;gap:44px}
+h1{font-size:clamp(32px,4.6vw,48px);line-height:1.12;font-weight:800;letter-spacing:-.02em;margin:0;text-align:center;text-wrap:balance}
+h2{font-size:32px;line-height:1.2;font-weight:800;letter-spacing:-.01em;margin:0}
+p{margin:0;color:var(--ink-2);max-width:80ch}
+b,strong{color:var(--ink)}
+a{color:var(--navy)}
+code{font-family:var(--mono);font-size:.8em;background:var(--sunken);color:var(--ink);padding:1px 5px;border-radius:4px;overflow-wrap:anywhere}
+.brand{display:flex;align-items:center;justify-content:center;gap:40px;margin-bottom:30px;flex-wrap:wrap}
+.brand img{display:block;max-width:38vw;height:auto}
+.brand .hs{font-size:76px;line-height:1}
+.subtitle{text-align:center;font-size:23px;color:var(--ink-2);margin:12px auto 0;max-width:none}
+.toc{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px;justify-content:center}
+.toc a{font-size:16px;font-weight:600;text-decoration:none;color:var(--ink-2);background:var(--paper);border:1px solid var(--line);padding:5px 12px;border-radius:999px}
+.toc a:hover{border-color:var(--navy);color:var(--navy)}
+section{display:flex;flex-direction:column;gap:16px}
+.sechead{border-top:3px solid var(--ink);padding-top:12px;display:flex;flex-wrap:wrap;gap:6px 14px;align-items:baseline}
+.sechead span{font-size:18px;color:var(--ink-2)}
+.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:12px}
+.fact{background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:14px 16px}
+.fact small{display:block;font-size:13px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--ink-3);margin-bottom:4px}
+.fact b{font-size:22px;line-height:1.25;display:block}
+.lead{font-size:21px;color:var(--ink);max-width:none}
+.scroll{overflow-x:auto;border:1px solid var(--line);border-radius:12px;background:var(--paper)}
+table{border-collapse:collapse;width:100%;font-size:17.5px;min-width:900px}
+th{text-align:left;font-size:14px;letter-spacing:.07em;text-transform:uppercase;color:var(--ink-3);font-weight:700;padding:12px 14px;border-bottom:1px solid var(--line);white-space:nowrap}
+td{padding:12px 14px;border-bottom:1px solid var(--line-2);vertical-align:top;color:var(--ink-2)}
+tr:last-child td{border-bottom:0}
+td.t{color:var(--ink);font-weight:600;min-width:260px}
+.id{font-family:var(--mono);font-size:15px;font-weight:500;background:var(--ink);color:#FFFFFF;padding:2px 7px;border-radius:5px;white-space:nowrap}
+.own{font-size:14px;font-weight:600;white-space:nowrap;color:var(--ink)}
+.pill{display:inline-block;font-size:13px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;border-radius:5px;padding:2px 8px;white-space:nowrap}
+.pill.ag{background:#E8EBF6;color:var(--navy)}
+.pill.nw{background:#D61F3A;color:#FFFFFF}
+.pill.ts{background:var(--warn-soft);color:var(--warn)}
+.pill.ln{background:var(--sunken);color:var(--ink-3)}
+.plat{font-size:13px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--ink-2);border:1px solid var(--line);border-radius:4px;padding:1px 6px;background:var(--ground);white-space:nowrap;display:inline-block;margin:0 4px 4px 0}
+
+/* item cards: screenshot left, points right */
+.rq{background:var(--paper);border:1px solid var(--line);border-radius:16px;overflow:hidden}
+.rq>header{display:flex;flex-wrap:wrap;gap:8px 14px;align-items:center;padding:14px 20px;border-bottom:1px solid var(--line);background:var(--sunken)}
+.rq>header .no{font-family:var(--mono);font-weight:700;font-size:16px;white-space:nowrap;background:var(--red);color:#FFFFFF;border-radius:6px;padding:3px 10px}
+.rq>header h3{font-size:24px;color:var(--ink);margin:0;flex:1 1 300px}
+.rq>header .ow{font-size:14px;font-weight:600;border-radius:999px;padding:3px 11px;background:var(--ink);color:#FFFFFF}
+.rq>header .pl{font-size:14px;font-weight:600;border-radius:999px;padding:3px 11px;border:1px solid var(--line);background:var(--paper);color:var(--ink-2)}
+.rq>.pair{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr)}
+.rq>.pair.solo{grid-template-columns:1fr}
+@media (max-width:720px){.rq>.pair{grid-template-columns:1fr}.rq .pics{border-right:0;border-bottom:1px solid var(--line-2)}}
+.pics{padding:16px;display:flex;flex-direction:column;gap:12px;background:var(--ground);border-right:1px solid var(--line-2);min-width:0}
+.pics .shot{margin:0;background:var(--paper);border:1px solid var(--line);border-radius:10px;overflow:hidden}
+.pics .shot img{display:block;width:100%;height:auto;border-bottom:1px solid var(--line);cursor:zoom-in}
+.pics .shot figcaption{padding:8px 12px;font-size:14px;color:var(--ink-3)}
+.det{padding:18px 20px;display:flex;flex-direction:column;gap:14px;min-width:0}
+.ind{display:grid;grid-template-columns:118px minmax(0,1fr);gap:12px;align-items:start}
+.ind .tag{font-size:13px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;border-radius:6px;padding:5px 8px;display:flex;align-items:center;gap:6px}
+.ind .tag::before{content:"";width:9px;height:9px;border-radius:50%;background:currentColor;flex:none}
+.ind .txt{font-size:17.5px;color:var(--ink);line-height:1.5}
+.ind .txt ol,.ind .txt ul{margin:0;padding-left:20px}.ind .txt li{margin-bottom:4px}
+.scr .tag{background:var(--red-soft);color:var(--red)}
+.why .tag{background:var(--sunken);color:var(--ink-2)}
+.bef .tag{background:var(--warn-soft);color:var(--warn)}
+.do .tag{background:#E8EBF6;color:var(--navy)}
+.done .tag{background:var(--ok-soft);color:var(--ok)}
+.m{display:flex;gap:8px;align-items:flex-start;margin-bottom:5px}
+.m i{font-style:normal;flex:none;width:24px;height:24px;border-radius:50%;background:var(--red);color:#FFFFFF;font-size:13px;font-weight:700;display:flex;align-items:center;justify-content:center;margin-top:2px}
+ul.chk{list-style:none;padding:0;margin:0}ul.chk li{position:relative;padding-left:26px}ul.chk li::before{content:"✓";position:absolute;left:0;color:var(--ok);font-weight:800}
+@media (max-width:1100px){.det .ind{grid-template-columns:1fr;gap:6px}.det .ind .tag{justify-self:start}.det .ind .txt{font-size:16.5px}}
+.solo .det{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:14px 28px}
+.solo .det .ind{grid-template-columns:1fr;gap:6px;align-content:start}.solo .det .ind .tag{justify-self:start}
+
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(400px,1fr));gap:14px;counter-reset:st}
+.step{counter-increment:st;background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:52px 18px 18px;position:relative;min-width:0}
+.step::before{content:counter(st);position:absolute;left:18px;top:14px;width:30px;height:30px;border-radius:50%;background:var(--navy);color:#FFFFFF;font-size:16px;font-weight:700;display:flex;align-items:center;justify-content:center}
+.step .who{position:absolute;left:58px;top:19px;font-size:13.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-3)}
+.step b{display:block;font-size:19px;line-height:1.3;margin-bottom:4px}
+.step span{display:block;color:var(--ink-2);font-size:16.5px}
+#lb{position:fixed;inset:0;background:rgba(26,29,38,.88);display:flex;align-items:center;justify-content:center;z-index:60;cursor:zoom-out;padding:20px}
+#lb[hidden]{display:none}
+#lb img{max-width:100%;max-height:100%;border-radius:8px;background:#FFFFFF}
+@media (max-width:560px){body{font-size:17px}h2{font-size:26px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <div class="brand"><img src="data:image/svg+xml;base64,PHN2ZyBwcmVzZXJ2ZUFzcGVjdFJhdGlvPSJub25lIiB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBvdmVyZmxvdz0idmlzaWJsZSIgc3R5bGU9ImRpc3BsYXk6IGJsb2NrOyIgdmlld0JveD0iMCAwIDE3MS40MzQgMTgwIiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8ZyBpZD0iTG9nbyBDb250YWluZXIiPgo8cGF0aCBpZD0iNCIgZD0iTTE0OS4xNCA5NkMxNTUuNzY3IDk2LjAwMDEgMTYxLjE0IDEwMS4zNzMgMTYxLjE0IDEwOFYxNDcuNDI5QzE2MS4xNCAxNTQuMDU2IDE1NS43NjcgMTU5LjQyOSAxNDkuMTQgMTU5LjQyOUgxMDkuNzExQzEwMy4wODQgMTU5LjQyOSA5Ny43MTEgMTU0LjA1NiA5Ny43MTA5IDE0Ny40MjlWMTIwLjY1QzEwMC44ODcgMTIxLjI3IDEwNC4wMDkgMTIyLjMwMyAxMDYuOTk1IDEyMy43NTdMMTMzLjYwNyAxMzYuNzFDMTM2Ljc2NCAxMzguMjQ3IDEzOS45MTYgMTM0LjYwOCAxMzcuOTQ1IDEzMS43MDJMMTIxLjMzIDEwNy4yMDhDMTE4Ljk2OSAxMDMuNzI4IDExNy4yNDQgOTkuOTM2OSAxMTYuMTY2IDk2SDE0OS4xNFoiIGZpbGw9InZhcigtLWZpbGwtMCwgI0RGQkU0QykiLz4KPHBhdGggaWQ9IjMiIGQ9Ik00MiA5NkM0Ny4wODE2IDk2IDUxLjk1MjQgOTYuOTAyMyA1Ni40NjA5IDk4LjU1NTdDNTYuMDk4NSAxMDMuMTk3IDU0Ljg3NjQgMTA3LjgwMSA1Mi43NzM0IDExMi4xMjFMMzkuODIwMyAxMzguNzMzQzM4LjI4MzkgMTQxLjg5IDQxLjkyMjUgMTQ1LjA0MiA0NC44MjgxIDE0My4wNzFMNjkuMzIyMyAxMjYuNDU2QzcyLjgwNTUgMTI0LjA5MyA3Ni41OTk1IDEyMi4zNjcgODAuNTQgMTIxLjI4OUM4Mi43NjM4IDEyNi40MTEgODQgMTMyLjA2MSA4NCAxMzhDODMuOTk5OSAxNjEuMTk2IDY1LjE5NTkgMTgwIDQyIDE4MEMxOC44MDQxIDE4MCAwLjAwMDE0NTk0OCAxNjEuMTk2IDAgMTM4QzAgMTE0LjgwNCAxOC44MDQgOTYgNDIgOTZaIiBmaWxsPSJ2YXIoLS1maWxsLTAsICNGMjVFNUUpIi8+CjxwYXRoIGlkPSIxIiBkPSJNNjEuNzEgMjAuNTYyNUM2OC4zMzczIDIwLjU2MjYgNzMuNzEgMjUuOTM1MSA3My43MSAzMi41NjI1VjYxLjAxMTdDNzAuNTI4NSA2MC4zOTI3IDY3LjQwMDggNTkuMzU5NCA2NC40MDkyIDU3LjkwMzNMMzcuNzk2OSA0NC45NTAyQzM0LjY0IDQzLjQxMzYgMzEuNDg4MyA0Ny4wNTE0IDMzLjQ1OSA0OS45NTdMNTAuMDc0MiA3NC40NTEyQzUyLjA5OTcgNzcuNDM3MSA1My42NTY5IDgwLjY1MiA1NC43MzkzIDgzLjk5MTJIMjIuMjgxMkMxNS42NTM5IDgzLjk5MTIgMTAuMjgxMyA3OC42MTg2IDEwLjI4MTIgNzEuOTkxMlYzMi41NjI1QzEwLjI4MTIgMjUuOTM1MSAxNS42NTM4IDIwLjU2MjUgMjIuMjgxMiAyMC41NjI1SDYxLjcxWiIgZmlsbD0idmFyKC0tZmlsbC0wLCAjNTQ2OEZGKSIvPgo8cGF0aCBpZD0iMiIgZD0iTTEyOS40MzQgMEMxNTIuNjMgNC4yMjIyMmUtMDUgMTcxLjQzNCAxOC44MDQxIDE3MS40MzQgNDJDMTcxLjQzNCA2NS4xOTU5IDE1Mi42MyA4NCAxMjkuNDM0IDg0QzEyOC43MzIgODQgMTI4LjAzMyA4My45ODI3IDEyNy4zNCA4My45NDg2QzEyMC4wMTkgODMuNTg4NSAxMTUuNDMxIDc2LjEyOTMgMTE4LjYzOSA2OS41MzkxTDEzMS41OTIgNDIuOTI2OEMxMzMuMTI4IDM5Ljc2OTggMTI5LjQ5IDM2LjYxNzkgMTI2LjU4NCAzOC41ODg5TDEwMi4wOTEgNTUuMjA0MUM5Ni41MTA5IDU4Ljk4OTEgODkuMTUyMyA1NS43MTU1IDg4LjAyNTggNDkuMDY3OEM4Ny42MzY0IDQ2Ljc3IDg3LjQzMzYgNDQuNDA4NyA4Ny40MzM2IDQyQzg3LjQzMzYgMTguODA0IDEwNi4yMzggMCAxMjkuNDM0IDBaIiBmaWxsPSJ2YXIoLS1maWxsLTAsICMzMzgxNjkpIi8+CjwvZz4KPC9zdmc+Cg==" alt="Teacher OS" width="300" height="96"><span class="hs">🤝</span><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAwIiBoZWlnaHQ9IjEwMDAiIHZpZXdCb3g9IjAgMCAxMDAwIDEwMDAiIHJvbGU9ImltZyIgYXJpYS1sYWJlbGxlZGJ5PSJ0aXRsZSBkZXNjIj4KICA8dGl0bGUgaWQ9InRpdGxlIj5Nb3N0YWZhIEthbWFsIEhpZ2ggU2Nob29sIGxvZ288L3RpdGxlPgogIDxkZXNjIGlkPSJkZXNjIj5NaW5pbWFsIGluZGlnbyBjaXJjdWxhciBzY2hvb2wgbG9nbyB3aXRoIGJvbGQgc2Fucy1zZXJpZiBsZXR0ZXJpbmcuPC9kZXNjPgogIDxnIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzFjMTc2OSI+CiAgICA8Y2lyY2xlIGN4PSI1MDAiIGN5PSI1MDAiIHI9IjQzOCIgc3Ryb2tlLXdpZHRoPSIxNyIvPgogICAgPGNpcmNsZSBjeD0iNTAwIiBjeT0iNTAwIiByPSI0MDkiIHN0cm9rZS13aWR0aD0iNSIvPgogIDwvZz4KICA8ZyBmaWxsPSIjMWMxNzY5IiBmb250LWZhbWlseT0iQXJpYWwsIEhlbHZldGljYSwgc2Fucy1zZXJpZiIgdGV4dC1hbmNob3I9Im1pZGRsZSI+CiAgICA8dGV4dCB4PSI1MDAiIHk9IjQ3NyIgZm9udC1zaXplPSIxMjQiIGZvbnQtd2VpZ2h0PSI4MDAiIGxldHRlci1zcGFjaW5nPSItMiI+TU9TVEFGQTwvdGV4dD4KICAgIDx0ZXh0IHg9IjUwMCIgeT0iNTk5IiBmb250LXNpemU9IjEzOCIgZm9udC13ZWlnaHQ9IjgwMCIgbGV0dGVyLXNwYWNpbmc9Ii0yIj5LQU1BTDwvdGV4dD4KICAgIDx0ZXh0IHg9IjUwMCIgeT0iNjY2IiBmb250LXNpemU9IjUyIiBmb250LXdlaWdodD0iNTAwIiBsZXR0ZXItc3BhY2luZz0iOSI+SElHSCBTQ0hPT0w8L3RleHQ+CiAgPC9nPgogIDxwYXRoIGQ9Ik0gMTgxIDY0NiBIIDI1NyBNIDc0MyA2NDYgSCA4MTkiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzFjMTc2OSIgc3Ryb2tlLXdpZHRoPSI1Ii8+Cjwvc3ZnPgo=" alt="Mostafa Kamal High School" width="300" height="96"></div>
+  <h1>Teacher OS: Tasks for 10 November</h1>
+  <p class="subtitle">Mostafa Kamal High School · Class 8 Mathematics · teacher training from 10 November 2026</p>
+</header>
+
+<section>
+  <p class="lead">On 10 November the five teachers receive their tablets and are trained on Teacher OS, set up for Class 8 Mathematics. They keep the tablets and keep using Teacher OS through the exams, until lessons start on 1 January 2027.</p>
+</section>
+
+<section id="all">
+  <div class="sechead"><h2>Tasks</h2></div>
+  <div class="scroll"><table>
+    <thead><tr><th>Task</th><th>Name</th><th>Priority</th><th>Platform</th><th>Owner</th><th>Done when</th><th>Details</th></tr></thead>
+    <tbody><tr><td><span class="id">Task 1</span></td><td class="t">Account page without sample data</td><td><span class="pill nw">Urgent</span></td><td><span class="plat">Website</span></td><td class="own">Frontend</td><td>A teacher who signed up today sees zero activity and Class 8 · Mathematics.</td><td><a href="index.html#r1">PRD</a></td></tr><tr><td><span class="id">Task 2</span></td><td class="t">Help number 16780</td><td><span class="pill nw">Urgent</span></td><td><span class="plat">Website</span></td><td class="own">Frontend</td><td>Help on the tablet shows 16780 as a tap-to-call number.</td><td><a href="index.html#r2">PRD</a></td></tr><tr><td><span class="id">Task 3</span></td><td class="t">Marks entry saves what was typed</td><td><span class="pill nw">Urgent</span></td><td><span class="plat">Website</span> <span class="plat">Backend</span></td><td class="own">Backend · Frontend</td><td>When the teacher types 30 of 25, then the row shows &quot;Marks cannot be more than 25&quot; and nothing is saved.</td><td><a href="index.html#r3">PRD</a></td></tr><tr><td><span class="id">Task 4</span></td><td class="t">IFP sign-in by QR or code with the teacher&#x27;s own token</td><td><span class="pill nw">Urgent</span></td><td><span class="plat">IFP</span> <span class="plat">Backend</span></td><td class="own">Backend · Frontend</td><td>Work done on the IFP is saved under the teacher who signed in.</td><td><a href="index.html#r4">PRD</a></td></tr><tr><td><span class="id">Task 5</span></td><td class="t">IFP opens the same account and follows the tablet in real time</td><td><span class="pill nw">Urgent</span></td><td><span class="plat">IFP</span> <span class="plat">Website</span> <span class="plat">Backend</span></td><td class="own">Backend · Frontend</td><td>The IFP opens on the class, chapter and topic selected on the tablet.</td><td><a href="index.html#r5">PRD</a></td></tr><tr><td><span class="id">Task 6</span></td><td class="t">Section in attendance and marks</td><td><span class="pill nw">Urgent</span></td><td><span class="plat">Website</span> <span class="plat">Backend</span></td><td class="own">Backend · Frontend</td><td>Attendance for section A and marks for section B are saved against the right students.</td><td><a href="index.html#r6">PRD</a></td></tr><tr><td><span class="id">Task 7</span></td><td class="t">Past attendance shows the teacher&#x27;s saved records</td><td><span class="pill nw">Urgent</span></td><td><span class="plat">Website</span> <span class="plat">Backend</span></td><td class="own">Backend · Frontend</td><td>Attendance taken today appears at the top under today&#x27;s date with the right counts, and opens to the student list.</td><td><a href="index.html#r7">PRD</a></td></tr><tr><td><span class="id">Task 8</span></td><td class="t">Quiz shows numbers and formulas correctly</td><td><span class="pill nw">Urgent</span></td><td><span class="plat">Website</span> <span class="plat">IFP</span> <span class="plat">Backend</span></td><td class="own">Backend</td><td>A Class 8 algebra quiz shows every number and formula correctly on the tablet and the IFP.</td><td><a href="index.html#r8">PRD</a></td></tr><tr><td><span class="id">Task 9</span></td><td class="t">Pilot environment, separate from the demo</td><td><span class="pill nw">Urgent</span></td><td><span class="plat">Backend</span></td><td class="own">Backend · DevOps</td><td>The school&#x27;s teachers and students exist only in the pilot.</td><td><a href="index.html#r9">PRD</a></td></tr><tr><td><span class="id">Task 10</span></td><td class="t">Screens fit the 86″ IFP and the HONOR Pad X9a</td><td><span class="pill nw">Urgent</span></td><td><span class="plat">IFP</span> <span class="plat">Website</span></td><td class="own">Frontend</td><td>Every screen used in training displays correctly on both devices.</td><td><a href="index.html#r10">PRD</a></td></tr><tr><td><span class="id">Task 11</span></td><td class="t">Roles and school scope</td><td><span class="pill ts">High</span></td><td><span class="plat">Backend</span></td><td class="own">Backend</td><td>Given a school admin of school A, when they request a student of school B by ID, then the API refuses it.</td><td><a href="index.html#r11">PRD</a></td></tr><tr><td><span class="id">Task 12</span></td><td class="t">Create the school and invite its admin</td><td><span class="pill ts">High</span></td><td><span class="plat">Super Admin</span></td><td class="own">Backend · Frontend</td><td>When Shikho creates Mostafa Kamal High School, then it appears in the Schools list and the admin&#x27;s mobile number receives the invitation SMS within a minute.</td><td><a href="index.html#r12">PRD</a></td></tr><tr><td><span class="id">Task 13</span></td><td class="t">Classes, sections and subjects</td><td><span class="pill ts">High</span></td><td><span class="plat">School Admin</span></td><td class="own">Backend · Frontend</td><td>Class 8 with sections A and B and subject Mathematics appears wherever class, section or subject is chosen.</td><td><a href="index.html#r13">PRD</a></td></tr><tr><td><span class="id">Task 14</span></td><td class="t">Teachers and invitations</td><td><span class="pill ts">High</span></td><td><span class="plat">School Admin</span></td><td class="own">Backend · Frontend</td><td>Five teachers are listed with Class 8 · Mathematics · sections, each Invited.</td><td><a href="index.html#r14">PRD</a></td></tr><tr><td><span class="id">Task 15</span></td><td class="t">Students by class and section</td><td><span class="pill ts">High</span></td><td><span class="plat">School Admin</span></td><td class="own">Backend · Frontend</td><td>104 students are saved under sections A and B.</td><td><a href="index.html#r15">PRD</a></td></tr><tr><td><span class="id">Task 16</span></td><td class="t">SMS for invitations and OTP</td><td><span class="pill ts">High</span></td><td><span class="plat">SMS</span> <span class="plat">Backend</span></td><td class="own">Backend</td><td>An invitation and an OTP reach a Grameenphone and a Robi number at the school within a minute.</td><td><a href="index.html#r16">PRD</a></td></tr><tr><td><span class="id">Task 17</span></td><td class="t">First sign-up from the invitation</td><td><span class="pill ts">High</span></td><td><span class="plat">Website</span></td><td class="own">Backend · Frontend</td><td>Given an invited teacher, when they finish steps 1–5, then they land on Class 8 Mathematics and appear as Active.</td><td><a href="index.html#r17">PRD</a></td></tr><tr><td><span class="id">Task 18</span></td><td class="t">Login with password, and forgot password</td><td><span class="pill ts">High</span></td><td><span class="plat">Website</span></td><td class="own">Backend · Frontend</td><td>Given an Active teacher, when they enter number and password, then they reach Home with no SMS sent.</td><td><a href="index.html#r18">PRD</a></td></tr></tbody>
+  </table></div>
+</section>
+
+</div>
+</body>
+</html>
